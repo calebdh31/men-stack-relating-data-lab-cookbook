@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= user.username %>'s Pantry</title>
+</head>
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+  <h1><%= user.username %>'s Pantry</h1>
+
+  <% if (user.pantry.length) { %>
+    <ul>
+      <% user.pantry.forEach(item => { %>
+        <li><%= item.name %></li>
+      <% }) %>
+    </ul>
+  <% } else { %>
+    <p>This pantry is empty.</p>
+  <% } %>
+
+  <a href="/users">Back to Community</a>
+</body>
+</html>
